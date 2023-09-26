@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ахметова Карина</title>
+    <style>
+        body {
+            background-image: url('default.jpg');
+            background-size: cover;
+        }
+        table {
+            margin-top: 20px;
+        }
+        td {
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table id="colorTable">
+        <tr>
+            <td style="background-color: rgb(235, 225, 225);"></td>
+            <td style="background-color: rgb(233, 172, 172);"></td>
+            <td style="background-color: rgb(231, 121, 121);"></td>
+            <td style="background-color: rgb(217, 49, 49);"></td>
+        </tr>
+        <tr>
+            <td style="background-color: rgb(177, 169, 169);"></td>
+            <td style="background-color: rgb(176, 134, 134);"></td>
+            <td style="background-color: rgb(162, 77, 77);"></td>
+            <td style="background-color: rgb(147, 22, 22);"></td>
+        </tr>
+        <tr>
+            <td style="background-color: rgb(137, 129, 129);"></td>
+            <td style="background-color: rgb(112, 81, 81);"></td>
+            <td style="background-color: rgb(114, 50, 50);"></td>
+            <td style="background-color: rgb(94, 17, 17);"></td>
+        </tr>
+    </table>
+
+    <script>
+        var colorTable = document.getElementById('colorTable');
+        var cells = colorTable.getElementsByTagName('td');
+
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('click', changeBackground);
+        }
+
+        function changeBackground() {
+            var color = this.style.backgroundColor;
+            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

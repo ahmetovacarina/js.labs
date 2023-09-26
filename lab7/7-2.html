@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ахметова Карина</title>
+    </head>
+    <body>
+        <ul id="link-list">
+            <li><a href="https://kartinkof.club/uploads/posts/2022-06/1655707116_7-kartinkof-club-p-kartinki-s-nadpisyu-ti-moya-prelest-7.jpg">Смеагошенко</a></li>
+            <li><a href="https://sun9-19.userapi.com/impg/hZ3QRrT5yZA134xgb-ekrAit7l9XxzKprVY31Q/QRz8S4D33E0.jpg?size=894x768&quality=96&sign=c3ce1ee143ca94a71c52581fa905d7f6&type=album">Лабаленин</a></li>
+            <li><a href="https://sun9-19.userapi.com/impg/62IUrYhG8vC6HjbNowKWWRxDCQBbrSmx1zrtbw/7XbExOXqtXE.jpg?size=1266x141&quality=96&sign=59eb4366aa75c29a92faa570579eb255&type=album">Патрин Евгений Владимирович о пользе Кайгородова</a></li>
+            <li><a href="https://cs13.pikabu.ru/post_img/big/2023/08/09/8/1691585828110744661.png">Питон</a></li>
+            <li><a href="https://sun9-4.userapi.com/impg/YIJpyYv8QM_aqVKQX8BY-S2lsA2EnobK5JwYGg/VzX0-XyDCCk.jpg?size=552x604&quality=96&sign=b5566da43aba9e2c9f7ef53f08f2ad32&type=album">Дистанционное зондирование</a></li>
+            <li><a href="https://sun9-5.userapi.com/impg/c857436/v857436767/162768/H2Yt_UvSP4U.jpg?size=720x292&quality=96&sign=229a69e8b993d0f6cf279bf40c4dcf83&type=album">Өфө</a></li>
+            <li><a href="file:/gallery/pictures/summer.html">Внутрення ссылка</a></li>
+        </ul>
+
+        <script>
+    
+            const links = document.documentElement.getElementsByTagName('a');
+
+                // Проходимся по каждой ссылке и проверяем, является ли она внешней
+                for (let i = 0; i < links.length; i++) {
+                    const link = links[i];
+                
+                // накидываем дизайна
+                if (link.href.startsWith('http://') || link.href.startsWith('https://')) {
+                    link.style.color = 'green';
+                    link.style.textDecoration = 'underline dotted';
+                } else {
+                    link.style.color = 'red';
+                    link.style.textDecoration = 'underline';
+                }
+                }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Ахметова Карина</title>
+            <style>
+                ul, #myUL {
+                  list-style-type: none;
+                }
+                
+                #myUL {
+                  margin: 0;
+                  padding: 0;
+                }
+                
+                /* Стрелка */
+                .caret {                
+                  cursor: pointer;
+                  user-select: none;
+                }
+                
+                .caret::before {
+                  content: "\02C3";
+                  color: black;
+                  display: inline-block;
+                  margin-right: 6px;
+                }
+
+                .caret-down::before {
+                    content: "\02C5";
+                }
+
+                /* Скрытый список */
+                .closed {
+                  display: none;
+                }
+                
+                /* Открытый список */
+                .active {
+                  display: block;
+                }
+
+                .bold{
+                    font-weight: bold;
+                }
+                </style>
+                
+        </head> 
+            <body>
+                <ul id="myUL">
+                    <li><span class="caret">(С:)</span>
+                      <ul class="closed">
+                        <li><span class="caret">Games</span>
+                          <ul class="closed">
+                            <li>Alan Wake</li>
+                            <li>Sekiro</li>
+                            <li>SIFU</li>
+                            <li>The Witcher</li>
+                          </ul>
+                        </li>
+                      </ul>
+                        <li><span class="caret">(D:)</span>
+                            <ul class="closed">
+                                <li>AMD</li>
+                                <li><span class="caret">Blender</span>
+                                    <ul class="closed">
+                                    <li>Blender 3.4</li>
+                                </ul>
+                                <li>Ryzen Controller</li>
+                            </ul>
+                        </li>
+                    </li>
+                </ul>
+                       
+                <script>
+
+
+                let items = document.querySelectorAll('ul li');
+                items.forEach((item) =>{
+                    item.addEventListener('mouseover', (event) =>{
+                        event.target.classList.add('bold');
+                    });
+                    item.addEventListener('mouseout', (event) =>{
+                        event.target.classList.remove('bold');
+                    });
+                });
+                
+                let tog = document.getElementsByClassName("caret");
+                
+                for (let i = 0; i < tog.length; i++) {
+                    tog[i].addEventListener("click", function() {
+                        this.parentElement.querySelector(".closed").classList.toggle("active");
+                        this.classList.toggle("caret-down");
+                    });
+                } 
+                </script>
+            </body>
+    </html>
