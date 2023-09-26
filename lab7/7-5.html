@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ахметова Карина</title>
+  <style>
+    #body1 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top:5px;
+      left:5px;
+      background-color: rgb(240, 160, 32);
+      z-index: 1;
+    }
+
+    #body2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top:55px;
+      left:55px;
+      background-color: rgb(255, 255, 0);
+      z-index: 3;
+    }
+
+    #body3 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top:105px;
+      left:105px;
+      background-color: rgb(27, 246, 45);
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="body1" class="box"></div>
+  <div id="body2" class="box"></div>
+  <div id="body3" class="box"></div>
+
+  <script>
+    const boxes = document.getElementsByClassName('box');
+
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].addEventListener('click', function() {
+        this.style.zIndex = 4;
+      });
+    }
+  </script>
+</body>
+</html>
